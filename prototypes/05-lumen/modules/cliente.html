@@ -1,0 +1,65 @@
+<article id="client" class="page">
+  <div class="stage">
+    <div class="hero">
+      <div id="client-art" class="art-host"></div>
+      <form class="note-form prompt" data-matter="">
+        <span class="prompt-label">Anotar</span>
+        <label class="sr-only" for="note-client">Nota para el cliente</label>
+        <input id="note-client" name="note" type="text" placeholder="qué hay que dejar de este cliente" required />
+        <button type="submit" class="prompt-go" aria-label="Guardar nota">
+          <svg viewBox="0 0 24 24" class="line"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        </button>
+        <button type="button" class="prompt-x" data-close-prompt aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" class="line"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </form>
+    </div>
+    <div class="hero-copy">
+      <a class="crumb" href="#/clientes">Clientes</a>
+      <p class="kicker" data-bind="sector"></p>
+      <h1 data-bind="name"></h1>
+      <p class="lede" data-bind="note"></p>
+      <dl class="facts">
+        <div>
+          <dt>Contacto</dt>
+          <dd data-bind="contact"></dd>
+        </div>
+        <div>
+          <dt>Cargo</dt>
+          <dd data-bind="role"></dd>
+        </div>
+        <div>
+          <dt>Correo</dt>
+          <dd><a data-bind="emailLink" href="#"></a></dd>
+        </div>
+        <div>
+          <dt>Teléfono</dt>
+          <dd data-bind="phone"></dd>
+        </div>
+        <div>
+          <dt>Dirección</dt>
+          <dd data-bind="address"></dd>
+        </div>
+      </dl>
+      <p class="note-slot" data-note-slot hidden></p>
+    </div>
+  </div>
+
+  <div class="rail-head">
+    <h2>Asuntos en la mesa</h2>
+    <a href="#/expedientes">Ver todos</a>
+  </div>
+  <div class="rail-wrap">
+    <button type="button" class="rail-btn prev" data-dir="prev" hidden aria-label="Anterior">
+      <svg viewBox="0 0 24 24" class="line"><path d="m14 6-6 6 6 6"></path></svg>
+    </button>
+    <div id="client-matters" class="rail"></div>
+    <button type="button" class="rail-btn next" data-dir="next" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" class="line"><path d="m10 6 6 6-6 6"></path></svg>
+    </button>
+  </div>
+</article>
+<section id="client-missing" hidden class="page">
+  <h1 class="miss">Ese cliente no está en la mesa.</h1>
+  <a class="link-go" href="#/clientes">Volver a clientes</a>
+</section>

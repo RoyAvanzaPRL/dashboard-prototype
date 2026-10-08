@@ -1,0 +1,59 @@
+<div id="matter" class="mx-auto max-w-6xl px-5 py-6 sm:px-8 sm:py-8">
+  <a href="#/expedientes" class="text-sm text-stone-500 hover:text-ink">← Expedientes</a>
+  <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+    <p data-bind="id" class="font-mono text-xs text-stone-500"></p>
+    <p data-bind="status"></p>
+    <p data-bind="area" class="text-sm text-stone-500"></p>
+  </div>
+  <h2 data-bind="title" class="mt-2 max-w-3xl font-serif text-4xl leading-tight tracking-tight"></h2>
+  <p data-bind="summary" class="mt-3 max-w-2xl text-sm leading-relaxed text-stone-600"></p>
+
+  <dl class="mt-8 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+    <div class="bg-panel px-4 py-3">
+      <dt class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Cliente</dt>
+      <dd class="mt-1 text-sm"><a data-bind="clientLink" class="underline decoration-stone-300 underline-offset-4 hover:decoration-ink"></a></dd>
+    </div>
+    <div class="bg-panel px-4 py-3">
+      <dt class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Contrario</dt>
+      <dd data-bind="opponent" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="bg-panel px-4 py-3">
+      <dt class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Órgano</dt>
+      <dd data-bind="court" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="bg-panel px-4 py-3">
+      <dt class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Responsable</dt>
+      <dd data-bind="lead" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="bg-panel px-4 py-3">
+      <dt class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Cuantía</dt>
+      <dd data-bind="amount" class="mt-1 text-sm tabular-nums"></dd>
+    </div>
+    <div class="bg-panel px-4 py-3">
+      <dt class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Abierto</dt>
+      <dd data-bind="opened" class="mt-1 text-sm"></dd>
+    </div>
+  </dl>
+
+  <section class="mt-6 rounded-xl border border-copper/30 bg-[#f8f1ea] px-4 py-4">
+    <p class="text-[11px] uppercase tracking-[0.14em] text-copper">Siguiente paso</p>
+    <p data-bind="next" class="mt-1 font-serif text-2xl"></p>
+    <p data-bind="nextWhen" class="mt-1 text-sm text-stone-600"></p>
+  </section>
+
+  <div class="mt-8 grid gap-8 lg:grid-cols-5">
+    <section class="lg:col-span-3">
+      <h3 class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Cronología</h3>
+      <ol id="timeline" class="mt-2"></ol>
+    </section>
+    <section class="lg:col-span-2">
+      <h3 class="text-[11px] uppercase tracking-[0.14em] text-stone-500">Documentos</h3>
+      <ul id="documents" class="mt-2"></ul>
+      <p class="mt-6 text-xs text-stone-500">Procurador · <span data-bind="procurador"></span></p>
+    </section>
+  </div>
+</div>
+<div id="matter-missing" hidden class="mx-auto max-w-6xl px-5 py-8">
+  <p class="font-serif text-3xl">Ese expediente no está en la mesa.</p>
+  <a class="mt-4 inline-block text-sm text-copper" href="#/expedientes">Volver al listado</a>
+</div>

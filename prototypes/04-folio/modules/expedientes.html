@@ -1,0 +1,72 @@
+<div class="h-full overflow-y-auto px-8 py-6">
+  <div class="flex items-end justify-between gap-4">
+    <div>
+      <p class="text-[11px] font-bold tracking-[0.14em] text-mute">EXPEDIENTES</p>
+      <h1 id="heading" class="mt-1 text-2xl font-bold tracking-tight">Todos</h1>
+      <p id="lede" class="mt-1 text-sm text-mute">Seis asuntos en la mesa. La contestación de Nou Transport vence mañana.</p>
+    </div>
+    <form id="list-search" class="relative">
+      <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+      <label class="sr-only" for="q">Buscar expediente</label>
+      <input id="q" type="search" placeholder="Buscar expediente" class="w-64 rounded-xl border border-line bg-white py-2 pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-brand" />
+    </form>
+  </div>
+  <p id="result-count" data-noun="asuntos" data-one="asunto" class="mt-4 text-xs font-semibold tracking-wide text-mute">6 asuntos</p>
+  <div class="mt-2 overflow-hidden rounded-2xl border border-line bg-white">
+    <a href="#/expediente/EXP-2026-014" data-row data-area="mercantil" data-status="abierto" data-search="exp-2026-014 impugnación junta mora hijos mercantil jordi palau" class="flex items-center gap-4 px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#3b6fd8] text-xs font-bold text-white">M</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-medium">Impugnación de acuerdos de la junta</span>
+        <span class="block text-xs text-mute">Mora &amp; Hijos · Jordi Palau</span>
+      </span>
+      <span class="pill pill-open">Abierto</span>
+      <span class="w-16 text-right text-xs text-mute">14 oct</span>
+    </a>
+    <a href="#/expediente/EXP-2026-019" data-row data-area="laboral" data-status="urgente" data-search="exp-2026-019 impugnación despido colectivo nou transport laboral marina soler" class="flex items-center gap-4 border-t border-line bg-[#fffaf7] px-4 py-3.5 text-sm">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#e07a2f] text-xs font-bold text-white">N</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-medium">Impugnación de despido colectivo</span>
+        <span class="block text-xs text-mute">Nou Transport · Marina Soler</span>
+      </span>
+      <span class="pill pill-hot">Urgente</span>
+      <span class="w-16 text-right text-xs font-semibold text-[#c2410c]">mañana</span>
+    </a>
+    <a href="#/expediente/EXP-2025-088" data-row data-area="familia" data-status="abierto" data-search="exp-2025-088 liquidación gananciales elena vives riera familia clara nieto" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#7c5cfc] text-xs font-bold text-white">E</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-medium">Liquidación de sociedad de gananciales</span>
+        <span class="block text-xs text-mute">Elena Vives Riera · Clara Nieto</span>
+      </span>
+      <span class="pill pill-open">Abierto</span>
+      <span class="w-16 text-right text-xs text-mute">16 oct</span>
+    </a>
+    <a href="#/expediente/EXP-2026-011" data-row data-area="contencioso" data-status="abierto" data-search="exp-2026-011 licencia terraza braseria del port sitges contencioso adrià bosch" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#178a4c] text-xs font-bold text-white">B</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-medium">Licencia de terraza denegada</span>
+        <span class="block text-xs text-mute">Braseria del Port · Adrià Bosch</span>
+      </span>
+      <span class="pill pill-open">Abierto</span>
+      <span class="w-16 text-right text-xs text-mute">21 oct</span>
+    </a>
+    <a href="#/expediente/EXP-2026-003" data-row data-area="civil" data-status="abierto" data-search="exp-2026-003 responsabilidad civil arquitecto helvetia marina soler" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#0f9f8f] text-xs font-bold text-white">H</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-medium">Responsabilidad civil del arquitecto</span>
+        <span class="block text-xs text-mute">Helvetia Seguros · Marina Soler</span>
+      </span>
+      <span class="pill pill-review">En revisión</span>
+      <span class="w-16 text-right text-xs text-mute">9 oct</span>
+    </a>
+    <a href="#/expediente/EXP-2025-072" data-row data-area="civil" data-status="cerrado" data-search="exp-2025-072 honorarios impagados clínica llevant clara nieto civil" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#d4537e] text-xs font-bold text-white">L</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-medium">Honorarios impagados</span>
+        <span class="block text-xs text-mute">Clínica Llevant · Clara Nieto</span>
+      </span>
+      <span class="pill pill-shut">Cerrado</span>
+      <span class="w-16 text-right text-xs text-mute">2 sep</span>
+    </a>
+    <p id="result-empty" hidden class="px-4 py-10 text-sm text-mute">Ningún expediente coincide con ese submódulo.</p>
+  </div>
+</div>

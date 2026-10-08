@@ -1,0 +1,90 @@
+<div class="h-full overflow-y-auto px-7 py-6">
+  <div class="flex items-center justify-between gap-4">
+    <div>
+      <h1 class="text-lg font-semibold">Clientes</h1>
+      <p id="result-count" data-noun="clientes" data-one="cliente" class="text-sm text-mute">6 clientes</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <form id="list-search" class="relative">
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <label class="sr-only" for="q">Buscar cliente</label>
+        <input id="q" type="search" placeholder="Buscar cliente" class="w-56 rounded-lg bg-[#f3f4f6] py-2 pl-9 pr-3 text-sm outline-none placeholder:text-mute" />
+      </form>
+      <div class="seg" role="group" aria-label="Filtrar por tipo">
+        <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filter="empresa" aria-pressed="false">Empresas</button>
+        <button type="button" data-filter="particular" aria-pressed="false">Particulares</button>
+      </div>
+      <button type="button" data-open="client-sheet" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">+ Cliente</button>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 px-2 pb-2 text-[11px] font-semibold tracking-wide text-mute">
+      <span></span><span>NOMBRE</span><span>CORREO</span><span>CONTACTO</span><span class="text-right">ACCIONES</span>
+    </div>
+    <a href="#/cliente/mora" data-row data-client data-status="empresa" data-search="mora hijos nuria nuria.mora@morahijos.example distribución socia" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Mora y Hijos"></button>
+      <span>Mora &amp; Hijos</span>
+      <span class="truncate text-[#5c6570]">nuria.mora@morahijos.example</span>
+      <span class="text-[#5c6570]">Núria Mora</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/nou" data-row data-client data-status="empresa" data-search="nou transport ricard.puig@noutransport.example ricard puig logística" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Nou Transport"></button>
+      <span>Nou Transport</span>
+      <span class="truncate text-[#5c6570]">ricard.puig@noutransport.example</span>
+      <span class="text-[#5c6570]">Ricard Puig</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/elena" data-row data-client data-status="particular" data-search="elena vives riera elena.vives@correo.example particular" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Elena Vives Riera"></button>
+      <span>Elena Vives Riera</span>
+      <span class="truncate text-[#5c6570]">elena.vives@correo.example</span>
+      <span class="text-[#5c6570]">Clienta directa</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/braseria" data-row data-client data-status="empresa" data-search="braseria del port joana vidal joana.vidal@braseriadelport.example hostelería sitges" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Braseria del Port"></button>
+      <span>Braseria del Port</span>
+      <span class="truncate text-[#5c6570]">joana.vidal@braseriadelport.example</span>
+      <span class="text-[#5c6570]">Joana Vidal</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/helvetia" data-row data-client data-status="empresa" data-search="helvetia seguros olga serra olga.serra@helvetia.example aseguradora" class="is-selected grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="true" aria-label="Seleccionar Helvetia Seguros"></button>
+      <span>Helvetia Seguros</span>
+      <span class="truncate text-[#5c6570]">olga.serra@helvetia.example</span>
+      <span class="text-[#5c6570]">Olga Serra</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/llevant" data-row data-client data-status="empresa" data-search="clínica llevant andreu feliu andreu.feliu@clinicallevant.example sanidad" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Clínica Llevant"></button>
+      <span>Clínica Llevant</span>
+      <span class="truncate text-[#5c6570]">andreu.feliu@clinicallevant.example</span>
+      <span class="text-[#5c6570]">Andreu Feliu</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <p id="result-empty" hidden class="px-2 py-8 text-sm text-mute">Ningún cliente coincide con ese filtro.</p>
+  </div>
+
+  <div id="client-sheet" hidden class="fixed inset-0 z-40 grid place-items-center bg-ink/30">
+    <form class="w-[420px] rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
+      <h2 class="text-lg font-semibold">Nuevo cliente</h2>
+      <label class="mt-4 block text-xs font-medium text-mute" for="nuevo-nombre">Nombre</label>
+      <input id="nuevo-nombre" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Nombre o razón social" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-correo">Correo</label>
+      <input id="nuevo-correo" type="email" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="correo@cliente.example" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-tipo">Tipo</label>
+      <select id="nuevo-tipo" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm">
+        <option>Empresa</option>
+        <option>Particular</option>
+      </select>
+      <p data-sheet-note hidden class="mt-3 text-sm text-tide"></p>
+      <div class="mt-4 flex justify-end gap-3">
+        <button type="button" data-close class="text-sm font-medium">Cerrar</button>
+        <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Anotar</button>
+      </div>
+    </form>
+  </div>
+</div>

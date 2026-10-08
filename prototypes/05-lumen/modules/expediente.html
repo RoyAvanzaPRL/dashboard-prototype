@@ -1,0 +1,100 @@
+<article id="matter" class="page">
+  <div class="stage">
+    <div class="hero">
+      <div id="matter-art" class="art-host"></div>
+      <form class="note-form prompt" data-matter="">
+        <span class="prompt-label">Anotar</span>
+        <label class="sr-only" for="note-matter">Nota para el asunto</label>
+        <input id="note-matter" name="note" type="text" placeholder="qué hay que dejar en este asunto" required />
+        <button type="submit" class="prompt-go" aria-label="Guardar nota">
+          <svg viewBox="0 0 24 24" class="line"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        </button>
+        <button type="button" class="prompt-x" data-close-prompt aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" class="line"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </form>
+    </div>
+    <div class="hero-copy">
+      <a class="crumb" href="#/expedientes">Expedientes</a>
+      <p class="kicker"></p>
+      <h1 data-bind="title"></h1>
+      <p class="lede" data-bind="summary"></p>
+      <dl class="facts">
+        <div>
+          <dt>Cliente</dt>
+          <dd><a data-bind="clientLink" href="#/clientes"></a></dd>
+        </div>
+        <div>
+          <dt>Contrario</dt>
+          <dd data-bind="opponent"></dd>
+        </div>
+        <div>
+          <dt>Órgano</dt>
+          <dd data-bind="court"></dd>
+        </div>
+        <div>
+          <dt>Responsable</dt>
+          <dd data-bind="lead"></dd>
+        </div>
+        <div>
+          <dt>Cuantía</dt>
+          <dd data-bind="amount"></dd>
+        </div>
+        <div>
+          <dt>Siguiente</dt>
+          <dd>
+            <span data-bind="next"></span>
+            <span class="fact-when" data-bind="nextWhen"></span>
+          </dd>
+        </div>
+      </dl>
+      <p class="fine">Procurador · <span data-bind="procurador"></span></p>
+      <p class="note-slot" data-note-slot hidden></p>
+    </div>
+  </div>
+
+  <div class="rail-head">
+    <h2>Documentos de este asunto</h2>
+    <a href="#/documentos">Ver todos</a>
+  </div>
+  <div class="rail-wrap">
+    <button type="button" class="rail-btn prev" data-dir="prev" hidden aria-label="Anterior">
+      <svg viewBox="0 0 24 24" class="line"><path d="m14 6-6 6 6 6"></path></svg>
+    </button>
+    <div id="documents" class="rail"></div>
+    <button type="button" class="rail-btn next" data-dir="next" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" class="line"><path d="m10 6 6 6-6 6"></path></svg>
+    </button>
+  </div>
+
+  <div class="rail-head">
+    <h2>Cronología</h2>
+  </div>
+  <div class="rail-wrap">
+    <button type="button" class="rail-btn prev" data-dir="prev" hidden aria-label="Anterior">
+      <svg viewBox="0 0 24 24" class="line"><path d="m14 6-6 6 6 6"></path></svg>
+    </button>
+    <div id="timeline" class="rail"></div>
+    <button type="button" class="rail-btn next" data-dir="next" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" class="line"><path d="m10 6 6 6-6 6"></path></svg>
+    </button>
+  </div>
+
+  <div class="rail-head">
+    <h2>También en la mesa</h2>
+    <a href="#/expedientes">Ver todos</a>
+  </div>
+  <div class="rail-wrap">
+    <button type="button" class="rail-btn prev" data-dir="prev" hidden aria-label="Anterior">
+      <svg viewBox="0 0 24 24" class="line"><path d="m14 6-6 6 6 6"></path></svg>
+    </button>
+    <div id="related" class="rail"></div>
+    <button type="button" class="rail-btn next" data-dir="next" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" class="line"><path d="m10 6 6 6-6 6"></path></svg>
+    </button>
+  </div>
+</article>
+<section id="matter-missing" hidden class="page">
+  <h1 class="miss">Ese expediente no está en la mesa.</h1>
+  <a class="link-go" href="#/expedientes">Volver a expedientes</a>
+</section>

@@ -1,0 +1,111 @@
+<div class="h-full overflow-y-auto px-7 py-6">
+  <div class="flex items-center justify-between gap-4">
+    <div>
+      <h1 class="text-lg font-semibold">Expedientes</h1>
+      <p id="result-count" data-noun="asuntos" data-one="asunto" class="text-sm text-mute">6 asuntos</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <form id="list-search" class="relative">
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <label class="sr-only" for="q">Buscar expediente</label>
+        <input id="q" type="search" placeholder="Buscar expediente" class="w-56 rounded-lg bg-[#f3f4f6] py-2 pl-9 pr-3 text-sm outline-none placeholder:text-mute" />
+      </form>
+      <div class="seg" role="group" aria-label="Filtrar por estado">
+        <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-filter="abierto" aria-pressed="false">Abiertos</button>
+        <button type="button" data-filter="urgente" aria-pressed="false">Urgentes</button>
+        <button type="button" data-filter="cerrado" aria-pressed="false">Cerrados</button>
+      </div>
+      <button type="button" data-open="matter-sheet" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">+ Expediente</button>
+    </div>
+  </div>
+  <p id="area-chip" hidden class="mt-3 inline-flex items-center gap-2 rounded-full bg-mint px-3 py-1 text-sm text-[#24584e]">
+    <span></span>
+    <a href="#/expedientes" class="font-semibold text-tide">Quitar</a>
+  </p>
+
+  <div class="mt-4">
+    <div class="grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 px-2 pb-2 text-[11px] font-semibold tracking-wide text-mute">
+      <span></span><span>ASUNTO</span><span>CLIENTE</span><span>RESPONSABLE</span><span>ESTADO</span><span class="text-right">ACCIONES</span>
+    </div>
+    <a href="#/expediente/EXP-2026-014" data-row data-matter data-area="mercantil" data-status="abierto" data-search="exp-2026-014 impugnación junta mora hijos mercantil jordi palau" class="grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Impugnación de acuerdos de la junta"></button>
+      <span>Impugnación de acuerdos de la junta</span>
+      <span class="text-[#5c6570]">Mora &amp; Hijos</span>
+      <span class="text-[#5c6570]">Jordi Palau</span>
+      <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-tide"></span>Abierto</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/expediente/EXP-2026-019" data-row data-matter data-area="laboral" data-status="urgente" data-search="exp-2026-019 impugnación despido colectivo nou transport laboral marina soler" class="is-selected grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="true" aria-label="Seleccionar Impugnación de despido colectivo"></button>
+      <span>Impugnación de despido colectivo</span>
+      <span class="text-[#5c6570]">Nou Transport</span>
+      <span class="text-[#5c6570]">Marina Soler</span>
+      <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-hot"></span>Urgente</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/expediente/EXP-2025-088" data-row data-matter data-area="familia" data-status="abierto" data-search="exp-2025-088 liquidación gananciales elena vives riera familia clara nieto" class="grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Liquidación de gananciales"></button>
+      <span>Liquidación de gananciales</span>
+      <span class="text-[#5c6570]">Elena Vives Riera</span>
+      <span class="text-[#5c6570]">Clara Nieto</span>
+      <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-tide"></span>Abierto</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/expediente/EXP-2026-011" data-row data-matter data-area="contencioso" data-status="abierto" data-search="exp-2026-011 licencia terraza braseria del port sitges contencioso adrià bosch" class="grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Licencia de terraza denegada"></button>
+      <span>Licencia de terraza denegada</span>
+      <span class="text-[#5c6570]">Braseria del Port</span>
+      <span class="text-[#5c6570]">Adrià Bosch</span>
+      <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-tide"></span>Abierto</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/expediente/EXP-2026-003" data-row data-matter data-area="civil" data-status="abierto" data-search="exp-2026-003 responsabilidad civil arquitecto helvetia marina soler" class="grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Responsabilidad civil del arquitecto"></button>
+      <span>Responsabilidad civil del arquitecto</span>
+      <span class="text-[#5c6570]">Helvetia Seguros</span>
+      <span class="text-[#5c6570]">Marina Soler</span>
+      <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-tide"></span>Abierto</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/expediente/EXP-2025-072" data-row data-matter data-area="civil" data-status="cerrado" data-search="exp-2025-072 honorarios impagados clínica llevant clara nieto civil" class="grid grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_9rem_7rem_5.5rem] items-center gap-3 rounded-xl px-2 py-3 text-sm">
+      <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Seleccionar Honorarios impagados"></button>
+      <span>Honorarios impagados</span>
+      <span class="text-[#5c6570]">Clínica Llevant</span>
+      <span class="text-[#5c6570]">Clara Nieto</span>
+      <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-slate-300"></span>Cerrado</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <p id="result-empty" hidden class="px-2 py-8 text-sm text-mute">Ningún expediente coincide con ese filtro.</p>
+  </div>
+
+  <div id="matter-sheet" hidden class="fixed inset-0 z-40 grid place-items-center bg-ink/30">
+    <form class="w-[420px] rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
+      <h2 class="text-lg font-semibold">Nuevo expediente</h2>
+      <label class="mt-4 block text-xs font-medium text-mute" for="nuevo-titulo">Asunto</label>
+      <input id="nuevo-titulo" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Título del asunto" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-cliente">Cliente</label>
+      <select id="nuevo-cliente" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm">
+        <option>Mora &amp; Hijos</option>
+        <option>Nou Transport</option>
+        <option>Elena Vives Riera</option>
+        <option>Braseria del Port</option>
+        <option>Helvetia Seguros</option>
+        <option>Clínica Llevant</option>
+      </select>
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-area">Materia</label>
+      <select id="nuevo-area" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm">
+        <option>Mercantil</option>
+        <option>Laboral</option>
+        <option>Civil</option>
+        <option>Familia</option>
+        <option>Contencioso</option>
+      </select>
+      <p data-sheet-note hidden class="mt-3 text-sm text-tide"></p>
+      <div class="mt-4 flex justify-end gap-3">
+        <button type="button" data-close class="text-sm font-medium">Cerrar</button>
+        <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Anotar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+---
+description: Arquitectura de prototipos de dashboard (shell, iframe, layouts y módulos). Solo pantalla grande, sin responsive.
+alwaysApply: true
+---
+
+# Dashboard prototypes
+
+Prototipos de dashboards en HTML, Tailwind por CDN y JavaScript. Sin build y sin framework.
+
+Hay dos layouts. Solo cambia el contenido del módulo.
+
+## Solo pantalla grande
+
+Los prototipos se diseñan y se implementan para escritorio. No hay versión responsive: ni breakpoints, ni menú hamburguesa, ni comprobación en móvil. El ancho de referencia es una pantalla grande.
+
+## Shell del laboratorio
+
+Única pieza fija entre prototipos. Nunca desaparece.
+
+- `index.html`: microbarra + iframe a pantalla completa debajo.
+- `shell/prototypes.js`: registro con id, nombre corto y ruta. Un prototipo nuevo es una línea.
+- La barra muestra número y nombre (`01 Ops`). Aspecto neutro, bajo y de tipo pequeño, distinto del producto.
+- Cada prototipo también abre solo, sin el shell.
+
+## Layout del prototipo
+
+Navbar y sidebar se quedan montados. Elegir un módulo sustituye el área principal.
+
+- Ruta con hash: `prototypes/01-ops/#/clientes`. Refresco, atrás y enlace directo vuelven a esa pantalla.
+- El ítem activo del menú sigue el hash.
+- Una ficha o un detalle es otro módulo, dentro del mismo layout.
+
+## Carpetas
+
+```text
+index.html
+shell/
+  prototypes.js
+  shell.js
+  shell.css
+prototypes/01-nombre/
+  index.html
+  app.js
+  modules/
+    resumen.html
+    clientes.html
+```
+
+## Al cambiar código
+
+- Lógica, estilos y copy de un prototipo viven solo en su carpeta.
+- El HTML de un módulo es solo esa pantalla. El layout no se copia dentro del módulo.
+- No crear `shared/` hasta que dos prototipos necesiten el mismo código.
+- El shell no usa Tailwind ni la UI del producto.
+- Tailwind CDN va dentro de cada prototipo.

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Albor · Intranet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#1c1a16",
+              paper: "#f4f0e7",
+              panel: "#fbf9f4",
+              line: "#e3ddd2",
+              spruce: "#172421",
+              copper: "#7c4a32",
+              moss: "#2f6b4f",
+              wine: "#8f3d3d",
+            },
+            fontFamily: {
+              sans: ['"Instrument Sans"', "sans-serif"],
+              serif: ['"Instrument Serif"', "serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="h-screen overflow-hidden bg-paper font-sans text-ink">
+    <div class="flex h-full">
+      <div id="backdrop" class="fixed inset-0 z-20 hidden bg-ink/40 lg:hidden"></div>
+      <aside
+        id="sidebar"
+        class="fixed inset-y-0 left-0 z-30 flex w-[232px] flex-col bg-spruce text-white lg:static"
+      >
+        <div class="px-5 pb-4 pt-5">
+          <p class="font-serif text-[1.7rem] leading-none tracking-tight">Albor</p>
+          <p class="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/40">Intranet</p>
+          <span class="mt-4 block h-px w-8 bg-copper"></span>
+        </div>
+        <nav class="min-h-0 flex-1 overflow-y-auto px-3 pb-4" aria-label="Módulos">
+          <p class="px-2.5 pb-1 pt-2 text-[10px] uppercase tracking-[0.16em] text-white/35">Trabajo</p>
+          <a href="#/resumen" data-nav="resumen" class="nav-link">Resumen</a>
+          <a href="#/expedientes" data-nav="expedientes" class="nav-link">Expedientes</a>
+          <a href="#/clientes" data-nav="clientes" class="nav-link">Clientes</a>
+          <a href="#/agenda" data-nav="agenda" class="nav-link">Agenda</a>
+          <a href="#/documentos" data-nav="documentos" class="nav-link">Documentos</a>
+          <p class="px-2.5 pb-1 pt-5 text-[10px] uppercase tracking-[0.16em] text-white/35">Estudio</p>
+          <a href="#/equipo" data-nav="equipo" class="nav-link">Equipo</a>
+        </nav>
+        <div class="border-t border-white/10 px-4 py-3">
+          <p class="text-sm text-white">Marina Soler</p>
+          <p class="text-xs text-white/50">Socia · Litigación</p>
+        </div>
+      </aside>
+
+      <div class="flex min-w-0 flex-1 flex-col">
+        <header class="flex h-14 shrink-0 items-center gap-3 border-b border-line bg-panel px-4">
+          <button
+            id="nav-toggle"
+            type="button"
+            class="inline-flex size-9 items-center justify-center rounded-md border border-line text-ink lg:hidden"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            <span class="sr-only">Abrir menú</span>
+            <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M3 5h14M3 10h14M3 15h14"></path>
+            </svg>
+          </button>
+          <p id="page-title" class="hidden max-w-[9rem] shrink truncate text-sm font-medium sm:block">Resumen</p>
+          <form id="search-form" class="flex min-w-0 flex-1 gap-2" role="search">
+            <label class="sr-only" for="search">Buscar</label>
+            <input
+              id="search"
+              name="q"
+              type="search"
+              placeholder="Buscar expediente o cliente"
+              class="min-w-0 flex-1 rounded-lg border border-line bg-paper px-3 py-1.5 text-sm outline-none placeholder:text-stone-400 focus:border-copper"
+            />
+            <button type="submit" class="hidden shrink-0 rounded-lg border border-line px-3 py-1.5 text-sm hover:border-ink sm:inline-block">Buscar</button>
+          </form>
+          <div class="relative shrink-0">
+            <button
+              id="notice-toggle"
+              type="button"
+              class="relative inline-flex size-9 items-center justify-center rounded-md border border-line"
+              aria-expanded="false"
+              aria-controls="notice-panel"
+            >
+              <span class="sr-only">Avisos</span>
+              <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M10 3.5a4.5 4.5 0 0 1 4.5 4.5v2.2l1 1.8H4.5l1-1.8V8A4.5 4.5 0 0 1 10 3.5Z"></path>
+                <path d="M8 15.5a2 2 0 0 0 4 0"></path>
+              </svg>
+              <span class="absolute right-1.5 top-1.5 size-1.5 rounded-full bg-wine"></span>
+            </button>
+            <div
+              id="notice-panel"
+              hidden
+              class="absolute right-0 top-11 z-20 w-80 max-w-[calc(100vw-2rem)] rounded-xl border border-line bg-panel p-2 shadow-sm"
+            >
+              <p class="px-2 py-1.5 text-[10px] uppercase tracking-[0.16em] text-stone-500">Hoy</p>
+              <a href="#/expediente/EXP-2026-019" class="block rounded-lg px-2 py-2 hover:bg-paper">
+                <p class="text-sm">Contestación de Nou Transport</p>
+                <p class="text-xs text-stone-500">Vence mañana a las 13:00</p>
+              </a>
+              <a href="#/expediente/EXP-2026-003" class="block rounded-lg px-2 py-2 hover:bg-paper">
+                <p class="text-sm">Informe pericial de Helvetia</p>
+                <p class="text-xs text-stone-500">Entró el lunes. Revisión el viernes</p>
+              </a>
+              <a href="#/expediente/EXP-2025-088" class="block rounded-lg px-2 py-2 hover:bg-paper">
+                <p class="text-sm">Clara dejó la tasación de Riera</p>
+                <p class="text-xs text-stone-500">Lista para la propuesta del día 16</p>
+              </a>
+            </div>
+          </div>
+          <div class="hidden items-center gap-2 sm:flex">
+            <span class="inline-flex size-8 items-center justify-center rounded-full bg-spruce text-xs text-white">MS</span>
+          </div>
+        </header>
+        <main id="main" class="min-h-0 flex-1 overflow-y-auto"></main>
+      </div>
+    </div>
+    <style>
+      .nav-link {
+        display: block;
+        margin-top: 2px;
+        border-radius: 6px;
+        padding: 8px 10px;
+        color: rgb(255 255 255 / 0.68);
+        font-size: 0.925rem;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        background: rgb(255 255 255 / 0.06);
+        color: white;
+      }
+      .nav-link.is-active {
+        background: rgb(255 255 255 / 0.1);
+        color: white;
+      }
+      @media (max-width: 1023px) {
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 150ms ease;
+        }
+        #sidebar.is-open {
+          transform: translateX(0);
+        }
+      }
+      .nav-link:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      a:focus-visible {
+        outline: 2px solid #7c4a32;
+        outline-offset: 2px;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

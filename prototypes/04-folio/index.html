@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Albor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#5b4ce5",
+              ink: "#17181c",
+              mute: "#8b919a",
+              line: "#eceef2",
+            },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="h-screen overflow-hidden bg-white font-sans text-ink antialiased">
+    <div class="flex h-full overflow-hidden bg-white">
+      <aside class="flex w-[268px] shrink-0 flex-col border-r border-[#f0f1f4]">
+        <div class="flex items-center gap-2.5 px-5 pb-2 pt-5">
+          <svg viewBox="0 0 32 32" class="size-8 shrink-0" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="#17181c"></circle>
+            <path d="M16.2 8.2c4.4.2 7.6 3.2 7.6 7.2 0 3.3-2.3 5.6-5.2 5.6-2.2 0-3.7-1.4-3.7-3.3 0-1.5 1-2.4 2.1-2.4" fill="none" stroke="white" stroke-width="1.7" stroke-linecap="round"></path>
+          </svg>
+          <span class="text-[17px] font-bold tracking-tight">Albor</span>
+          <span class="rounded-full bg-[#f6e7a8] px-2 py-0.5 text-[11px] font-semibold text-[#7a5b12]">Mesa</span>
+        </div>
+
+        <nav class="min-h-0 flex-1 overflow-y-auto pb-2 pt-2" aria-label="Módulos">
+          <div class="nav-group" data-group="inicio">
+            <div class="nav-parent">
+              <a href="#/resumen" data-group-link="inicio" class="nav-link">
+                <svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z"></path></svg>
+                <span>Inicio</span>
+              </a>
+              <button type="button" class="nav-toggle" data-toggle="inicio" aria-expanded="false" aria-controls="sub-inicio" aria-label="Submódulos de Inicio">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-inicio" class="nav-sub" hidden>
+              <a href="#/resumen" class="sub-link" data-subnav="inicio" data-subkey="">Mesa</a>
+              <a href="#/resumen?vista=plazos" class="sub-link" data-subnav="inicio" data-subkey="plazos">Plazos</a>
+            </div>
+          </div>
+
+          <div class="nav-group is-open" data-group="expedientes">
+            <div class="nav-parent">
+              <a href="#/expedientes" data-group-link="expedientes" class="nav-link">
+                <svg viewBox="0 0 24 24"><path d="M4 7.5h6l2 2H20v9.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7.5Z"></path></svg>
+                <span>Expedientes</span>
+              </a>
+              <button type="button" class="nav-toggle" data-toggle="expedientes" aria-expanded="true" aria-controls="sub-expedientes" aria-label="Submódulos de Expedientes">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-expedientes" class="nav-sub">
+              <a href="#/expedientes" class="sub-link" data-subnav="expedientes" data-subkey=""><span>Todos</span><span class="sub-count">6</span></a>
+              <a href="#/expedientes?area=mercantil" class="sub-link" data-subnav="expedientes" data-subkey="mercantil"><span>Mercantil</span><span class="sub-count">1</span></a>
+              <a href="#/expedientes?area=laboral" class="sub-link" data-subnav="expedientes" data-subkey="laboral"><span>Laboral</span><span class="sub-count">1</span></a>
+              <a href="#/expedientes?area=civil" class="sub-link" data-subnav="expedientes" data-subkey="civil"><span>Civil</span><span class="sub-count">2</span></a>
+              <a href="#/expedientes?area=familia" class="sub-link" data-subnav="expedientes" data-subkey="familia"><span>Familia</span><span class="sub-count">1</span></a>
+              <a href="#/expedientes?area=contencioso" class="sub-link" data-subnav="expedientes" data-subkey="contencioso"><span>Contencioso</span><span class="sub-count">1</span></a>
+              <a href="#/expedientes?estado=cerrado" class="sub-link" data-subnav="expedientes" data-subkey="cerrado"><span>Cerrados</span><span class="sub-count">1</span></a>
+            </div>
+          </div>
+
+          <div class="nav-group" data-group="clientes">
+            <div class="nav-parent">
+              <a href="#/clientes" data-group-link="clientes" class="nav-link">
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"></circle><path d="M4 18.5c.6-2.4 2.4-3.5 5-3.5s4.4 1.1 5 3.5"></path><circle cx="17" cy="9.5" r="2.2"></circle><path d="M16 15c1.8.2 3.2 1.1 3.8 3.5"></path></svg>
+                <span>Clientes</span>
+              </a>
+              <button type="button" class="nav-toggle" data-toggle="clientes" aria-expanded="false" aria-controls="sub-clientes" aria-label="Submódulos de Clientes">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-clientes" class="nav-sub" hidden>
+              <a href="#/clientes" class="sub-link" data-subnav="clientes" data-subkey=""><span>Todos</span><span class="sub-count">6</span></a>
+              <a href="#/clientes?tipo=empresa" class="sub-link" data-subnav="clientes" data-subkey="empresa"><span>Empresas</span><span class="sub-count">4</span></a>
+              <a href="#/clientes?tipo=particular" class="sub-link" data-subnav="clientes" data-subkey="particular"><span>Particulares</span><span class="sub-count">1</span></a>
+              <a href="#/clientes?tipo=aseguradora" class="sub-link" data-subnav="clientes" data-subkey="aseguradora"><span>Aseguradoras</span><span class="sub-count">1</span></a>
+            </div>
+          </div>
+
+          <div class="nav-group" data-group="agenda">
+            <div class="nav-parent">
+              <a href="#/agenda" data-group-link="agenda" class="nav-link">
+                <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3.5v3M16 3.5v3M4 10h16"></path></svg>
+                <span>Agenda</span>
+              </a>
+              <button type="button" class="nav-toggle" data-toggle="agenda" aria-expanded="false" aria-controls="sub-agenda" aria-label="Submódulos de Agenda">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-agenda" class="nav-sub" hidden>
+              <a href="#/agenda" class="sub-link" data-subnav="agenda" data-subkey=""><span>Semana</span><span class="sub-count">7</span></a>
+              <a href="#/agenda?tipo=vista" class="sub-link" data-subnav="agenda" data-subkey="vista"><span>Vistas</span><span class="sub-count">1</span></a>
+              <a href="#/agenda?tipo=vencimiento" class="sub-link" data-subnav="agenda" data-subkey="vencimiento"><span>Vencimientos</span><span class="sub-count">4</span></a>
+              <a href="#/agenda?tipo=reunion" class="sub-link" data-subnav="agenda" data-subkey="reunion"><span>Reuniones</span><span class="sub-count">2</span></a>
+            </div>
+          </div>
+
+          <div class="nav-group" data-group="documentos">
+            <div class="nav-parent">
+              <a href="#/documentos" data-group-link="documentos" class="nav-link">
+                <svg viewBox="0 0 24 24"><path d="M7 3.5h7l5 5V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1Z"></path><path d="M14 3.5V9h5"></path></svg>
+                <span>Documentos</span>
+              </a>
+              <button type="button" class="nav-toggle" data-toggle="documentos" aria-expanded="false" aria-controls="sub-documentos" aria-label="Submódulos de Documentos">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-documentos" class="nav-sub" hidden>
+              <a href="#/documentos" class="sub-link" data-subnav="documentos" data-subkey=""><span>Recientes</span><span class="sub-count">9</span></a>
+              <a href="#/documentos?tipo=escrito" class="sub-link" data-subnav="documentos" data-subkey="escrito"><span>Escritos</span><span class="sub-count">3</span></a>
+              <a href="#/documentos?tipo=prueba" class="sub-link" data-subnav="documentos" data-subkey="prueba"><span>Prueba</span><span class="sub-count">3</span></a>
+              <a href="#/documentos?tipo=archivo" class="sub-link" data-subnav="documentos" data-subkey="archivo"><span>Archivo</span><span class="sub-count">3</span></a>
+            </div>
+          </div>
+
+          <div class="nav-group is-open is-panel" data-group="avisos">
+            <div class="nav-parent">
+              <button type="button" id="notice-toggle" class="nav-link is-open-panel" aria-expanded="true" aria-controls="notice-panel">
+                <svg viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 1 1 12 0v5.5l1.2 1.5H4.8L6 16.5Z"></path><path d="M10 19.5a2 2 0 0 0 4 0"></path></svg>
+                <span>Avisos</span>
+                <span id="notice-badge" class="nav-badge">4</span>
+              </button>
+              <button type="button" class="nav-toggle" data-toggle="avisos" aria-expanded="true" aria-controls="sub-avisos" aria-label="Submódulos de Avisos">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-avisos" class="nav-sub">
+              <button type="button" class="sub-link is-active" data-notice-filter="all" aria-pressed="true"><span>Todas</span><span class="sub-count">9</span></button>
+              <button type="button" class="sub-link" data-notice-filter="unread" aria-pressed="false"><span>Sin leer</span><span id="unread-count" class="sub-count">4</span></button>
+              <button type="button" class="sub-link" data-notice-filter="plazo" aria-pressed="false"><span>Plazos</span><span class="sub-count">3</span></button>
+            </div>
+          </div>
+
+          <div class="nav-group" data-group="equipo">
+            <div class="nav-parent">
+              <a href="#/equipo" data-group-link="equipo" class="nav-link">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"></circle><path d="M6 19c.8-2.4 2.8-3.5 6-3.5s5.2 1.1 6 3.5"></path></svg>
+                <span>Equipo</span>
+              </a>
+              <button type="button" class="nav-toggle" data-toggle="equipo" aria-expanded="false" aria-controls="sub-equipo" aria-label="Submódulos de Equipo">
+                <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            <div id="sub-equipo" class="nav-sub" hidden>
+              <a href="#/equipo" class="sub-link" data-subnav="equipo" data-subkey=""><span>Todos</span><span class="sub-count">5</span></a>
+              <a href="#/equipo?rol=socio" class="sub-link" data-subnav="equipo" data-subkey="socio"><span>Socios</span><span class="sub-count">2</span></a>
+              <a href="#/equipo?rol=asociado" class="sub-link" data-subnav="equipo" data-subkey="asociado"><span>Asociados</span><span class="sub-count">2</span></a>
+              <a href="#/equipo?rol=mesa" class="sub-link" data-subnav="equipo" data-subkey="mesa"><span>Mesa</span><span class="sub-count">1</span></a>
+            </div>
+          </div>
+
+          <div class="relative mt-4">
+            <div class="nav-section">
+              <p id="pins-label">MIS ASUNTOS (3)</p>
+              <button id="pin-toggle" type="button" class="grid size-6 place-items-center rounded-md text-mute hover:bg-[#f3f4f6] hover:text-ink" aria-expanded="false" aria-controls="pin-panel" aria-label="Añadir asunto a la mesa">
+                <svg viewBox="0 0 24 24" class="line size-4"><path d="M12 6v12M6 12h12"></path></svg>
+              </button>
+              <div id="pin-panel" hidden class="absolute right-2 top-8 z-40 w-56 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.14)]"></div>
+            </div>
+            <div id="pins" class="mt-1"></div>
+          </div>
+        </nav>
+
+        <div class="relative px-2 pb-3">
+          <button id="help-toggle" type="button" class="help-link w-[calc(100%-0px)]" aria-expanded="false" aria-controls="help-panel">
+            <svg viewBox="0 0 24 24" class="line size-[18px] text-mute"><circle cx="12" cy="12" r="8"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.2 2.4c-.7.3-1.2.8-1.2 1.6V14"></path><path d="M12 17h.01"></path></svg>
+            <span>Ayuda y soporte</span>
+          </button>
+          <div id="help-panel" hidden class="absolute bottom-14 left-3 z-40 w-64 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.14)]">
+            <a href="#/expediente/EXP-2026-019" class="block rounded-lg px-3 py-2 hover:bg-[#f6f7f8]">
+              <p class="text-sm font-medium">La contestación de mañana</p>
+              <p class="text-xs text-mute">Cerrarla con Ricard antes de las 11</p>
+            </a>
+            <a href="#/expediente/EXP-2026-014" class="block rounded-lg px-3 py-2 hover:bg-[#f6f7f8]">
+              <p class="text-sm font-medium">La vista del día 14</p>
+              <p class="text-xs text-mute">Jordi, mercantil n.º 7</p>
+            </a>
+            <a href="#/equipo" class="block rounded-lg px-3 py-2 hover:bg-[#f6f7f8]">
+              <p class="text-sm font-medium">Quién está en sala</p>
+              <p class="text-xs text-mute">Marina vuelve a las 11</p>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="flex min-w-0 flex-1 flex-col bg-[#f6f7f9]">
+        <header class="relative z-20 flex h-16 shrink-0 items-center justify-end gap-2 px-6">
+          <button id="draft-open" type="button" class="mr-2 inline-flex items-center gap-1.5 rounded-full border border-brand bg-white px-3.5 py-1.5 text-[11px] font-bold tracking-[0.08em] text-brand hover:bg-[#f6f4ff]">
+            <svg viewBox="0 0 24 24" class="line size-3.5"><path d="M13 3 5 14h7l-1 7 8-11h-7l1-7Z"></path></svg>
+            NUEVO ESCRITO
+          </button>
+          <div class="relative">
+            <button id="search-toggle" type="button" class="icon-btn" aria-expanded="false" aria-controls="search-panel" aria-label="Buscar">
+              <svg viewBox="0 0 24 24" class="line size-[18px]"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+            </button>
+            <div id="search-panel" hidden class="absolute right-0 top-11 w-80 rounded-2xl border border-line bg-white p-2 shadow-[0_16px_40px_rgba(20,24,28,0.14)]">
+              <label class="sr-only" for="q-global">Buscar en la mesa</label>
+              <input id="q-global" type="search" placeholder="Asunto, cliente, contrario…" class="w-full rounded-xl bg-[#f4f5f7] px-3 py-2 text-sm outline-none placeholder:text-mute" />
+              <div id="search-list" class="mt-1"></div>
+            </div>
+          </div>
+          <div class="relative">
+            <button id="sede-toggle" type="button" class="icon-btn" aria-expanded="false" aria-controls="sede-panel" aria-label="Sede">
+              <svg viewBox="0 0 24 24" class="line size-[18px]"><circle cx="12" cy="12" r="3"></circle><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M18 6l-1.6 1.6M7.6 16.4 6 18"></path></svg>
+            </button>
+            <div id="sede-panel" hidden class="absolute right-0 top-11 w-52 rounded-2xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.14)]">
+              <p class="px-2.5 py-1.5 text-[11px] font-bold tracking-wide text-mute">SEDE</p>
+              <button type="button" data-sede="barcelona" class="flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-sm hover:bg-[#f6f7f8]" aria-pressed="true">
+                <span>Barcelona</span>
+                <span class="sede-mark">✓</span>
+              </button>
+              <button type="button" data-sede="sitges" class="flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-sm hover:bg-[#f6f7f8]" aria-pressed="false">
+                <span>Sitges</span>
+                <span class="sede-mark" hidden>✓</span>
+              </button>
+            </div>
+          </div>
+          <div class="relative">
+            <button id="user-toggle" type="button" class="grid size-8 place-items-center rounded-full bg-[#3d9a4a] text-sm font-bold text-white" aria-expanded="false" aria-controls="user-panel" aria-label="Marina Soler">M</button>
+            <div id="user-panel" hidden class="absolute right-0 top-11 w-56 rounded-2xl border border-line bg-white p-3 shadow-[0_16px_40px_rgba(20,24,28,0.14)]">
+              <p class="text-sm font-semibold">Marina Soler</p>
+              <p class="text-xs text-mute">Socia · Litigación</p>
+              <a href="#/equipo?rol=socio" class="mt-3 block text-sm font-semibold text-brand">Ver los socios</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="relative min-h-0 flex-1">
+          <div id="main" class="h-full overflow-y-auto"></div>
+          <div id="scrim" class="absolute inset-0 z-20 bg-[#1c1e26]/45"></div>
+          <section id="notice-panel" class="absolute left-4 top-3 z-30 flex max-h-[calc(100%-1.5rem)] w-[440px] flex-col overflow-hidden rounded-2xl bg-white shadow-[0_24px_70px_rgba(20,24,28,0.22)]" aria-label="Avisos">
+            <header class="flex items-center justify-between px-5 pt-5">
+              <h2 class="text-lg font-bold">Avisos</h2>
+              <button id="notice-close" type="button" class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f4f5f7] hover:text-ink" aria-label="Cerrar avisos">
+                <svg viewBox="0 0 24 24" class="line size-4"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              </button>
+            </header>
+            <div class="flex items-center gap-4 border-b border-line px-5 py-3 text-sm">
+              <button type="button" class="notice-tab is-active" data-notice-filter="all" aria-pressed="true"><span id="notice-all-label">Todas (9)</span></button>
+              <button type="button" class="notice-tab" data-notice-filter="unread" aria-pressed="false">Sin leer</button>
+              <button type="button" class="notice-tab" data-notice-filter="plazo" aria-pressed="false">Plazos</button>
+              <button id="mark-read" type="button" class="ml-auto inline-flex items-center gap-1 text-[13px] font-semibold text-brand">
+                <svg viewBox="0 0 24 24" class="line size-3.5"><path d="m5 12 5 5L20 7"></path></svg>
+                Marcar leídas
+              </button>
+            </div>
+            <div id="notice-list" class="min-h-0 flex-1 overflow-y-auto px-3 py-2"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="draft-dialog" hidden class="fixed inset-0 z-50 grid place-items-center bg-[#1c1e26]/45 p-6">
+      <form id="draft-form" class="w-[440px] rounded-2xl bg-white p-6 shadow-[0_24px_70px_rgba(20,24,28,0.22)]">
+        <h2 class="text-lg font-bold">Nuevo escrito</h2>
+        <p class="mt-1 text-sm text-mute">Queda anotado en la mesa. Laia lo verá con las provisiones.</p>
+        <label class="mt-4 block text-xs font-semibold text-mute" for="draft-matter">Asunto</label>
+        <select id="draft-matter" class="mt-1 w-full rounded-xl border border-line px-3 py-2 text-sm outline-none focus:border-brand"></select>
+        <label class="mt-3 block text-xs font-semibold text-mute" for="draft-note">Nota</label>
+        <textarea id="draft-note" required rows="3" placeholder="Qué hay que dejar escrito" class="mt-1 w-full resize-none rounded-xl border border-line px-3 py-2 text-sm outline-none focus:border-brand"></textarea>
+        <p id="draft-done" hidden class="mt-3 text-sm font-medium text-brand"></p>
+        <div class="mt-4 flex justify-end gap-3">
+          <button id="draft-cancel" type="button" class="text-sm font-medium text-[#5c6570]">Cancelar</button>
+          <button id="draft-submit" type="submit" class="rounded-lg bg-brand px-3.5 py-2 text-sm font-semibold text-white">Anotar</button>
+        </div>
+      </form>
+    </div>
+
+    <style>
+      button { cursor: pointer; }
+      .line, .nav-link svg, .nav-toggle svg {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .nav-parent {
+        display: flex;
+        align-items: center;
+        margin: 1px 8px;
+        border-radius: 10px;
+      }
+      .nav-parent:hover { background: #f6f7f8; }
+      .nav-group.is-panel > .nav-parent { background: #f3f4f6; }
+      .nav-link {
+        display: flex;
+        min-width: 0;
+        flex: 1;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 8px 2px 8px 10px;
+        color: #3c424a;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: left;
+      }
+      .nav-link svg { width: 18px; height: 18px; color: #8b919a; }
+      .nav-link.is-section,
+      .nav-link.is-open-panel { color: #17181c; font-weight: 600; }
+      .nav-link.is-section svg,
+      .nav-link.is-open-panel svg { color: #17181c; }
+      .nav-badge {
+        margin-left: auto;
+        border-radius: 999px;
+        background: #ff3b5c;
+        padding: 3px 6px;
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .nav-toggle {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        margin-right: 4px;
+        place-items: center;
+        border-radius: 8px;
+        color: #9aa1ab;
+      }
+      .nav-toggle svg { width: 14px; height: 14px; transition: transform 0.15s ease; }
+      .nav-group.is-open > .nav-parent .nav-toggle svg { transform: rotate(180deg); }
+      .nav-sub {
+        display: flex;
+        flex-direction: column;
+        margin: 2px 8px 8px 28px;
+        padding-left: 10px;
+        border-left: 1px solid #e6e8ee;
+      }
+      .sub-link {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        border-radius: 8px;
+        padding: 6px 10px;
+        color: #5c6570;
+        font-size: 13.5px;
+        font-weight: 500;
+        text-align: left;
+      }
+      .sub-link:hover { background: #f6f7f8; color: #17181c; }
+      .sub-link.is-active { background: #f3f4f6; color: #17181c; font-weight: 600; }
+      .sub-count { color: #b0b6bf; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+      .sub-link.is-active .sub-count { color: #6b7280; }
+      .nav-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 8px 8px 0;
+        padding: 0 10px;
+        color: #9aa1ab;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+      .pin-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 1px 8px;
+        border-radius: 10px;
+        padding: 7px 10px;
+        color: #2c3138;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .pin-link:hover { background: #f6f7f8; }
+      .pin-link.is-active { background: #f3f4f6; font-weight: 600; }
+      .pin-mark {
+        display: grid;
+        width: 22px;
+        height: 22px;
+        flex: none;
+        place-items: center;
+        border-radius: 6px;
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .help-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 8px 10px;
+        color: #3c424a;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .help-link:hover,
+      .help-link[aria-expanded="true"] { background: #f6f7f8; }
+      .icon-btn {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border-radius: 10px;
+        color: #5c6570;
+      }
+      .icon-btn:hover,
+      .icon-btn[aria-expanded="true"] { background: white; color: #17181c; }
+      .notice-tab { color: #8b919a; font-weight: 500; }
+      .notice-tab.is-active { color: #17181c; font-weight: 600; }
+      .pill {
+        border-radius: 7px;
+        padding: 3px 8px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .pill-open { background: #eef2ff; color: #4338ca; }
+      .pill-hot { background: #fff1e8; color: #c2410c; }
+      .pill-review { background: #f3eaff; color: #6d28d9; }
+      .pill-shut { background: #f3f4f6; color: #6b7280; }
+      .sede-mark { color: #5b4ce5; font-size: 12px; font-weight: 700; }
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #5b4ce5;
+        outline-offset: 2px;
+      }
+      [hidden] { display: none !important; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

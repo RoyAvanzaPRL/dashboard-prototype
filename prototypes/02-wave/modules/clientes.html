@@ -1,0 +1,96 @@
+<section class="rounded-[28px] bg-white px-7 py-6 shadow-[0_10px_30px_rgba(30,36,51,0.04)]">
+  <div class="flex items-center justify-between gap-4">
+    <h2 class="text-lg font-semibold">Clientes</h2>
+    <div class="flex items-center gap-3">
+      <form id="list-search" class="relative">
+        <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <label class="sr-only" for="q">Buscar cliente</label>
+        <input id="q" type="search" placeholder="Buscar cliente" class="w-64 rounded-full border border-[#e6e8ee] bg-white py-2 pl-10 pr-4 text-sm outline-none placeholder:text-mute" />
+      </form>
+      <label class="relative">
+        <span class="sr-only">Tipo</span>
+        <select id="tipo" class="appearance-none rounded-full border border-[#e6e8ee] bg-white py-2 pl-4 pr-9 text-sm">
+          <option value="todos">Todos</option>
+          <option value="empresa">Empresas</option>
+          <option value="particular">Particulares</option>
+        </select>
+        <svg viewBox="0 0 24 24" class="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+      </label>
+      <button type="button" class="rounded-full bg-violet px-4 py-2 text-sm font-semibold text-white">+ Cliente</button>
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <div class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 px-2 pb-3 text-[11px] font-semibold tracking-[0.14em] text-mute">
+      <span></span>
+      <span>NOMBRE</span>
+      <span>CORREO</span>
+      <span>CONTACTO</span>
+      <span class="text-right">ACCIONES</span>
+    </div>
+    <a href="#/cliente/mora" data-row data-client data-status="empresa" data-search="mora hijos nuria nuria.mora@morahijos.example distribución socia" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3.5 text-sm">
+      <button type="button" data-check class="size-4 rounded-full border border-[#d5d8e0]" aria-label="Seleccionar Mora y Hijos"></button>
+      <span>Mora &amp; Hijos</span>
+      <span class="text-[#5c6578]">nuria.mora@morahijos.example</span>
+      <span class="text-[#5c6578]">Núria Mora</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/nou" data-row data-client data-status="empresa" data-search="nou transport ricard.puig@noutransport.example ricard puig logística" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3.5 text-sm">
+      <button type="button" data-check class="size-4 rounded-full border border-[#d5d8e0]" aria-label="Seleccionar Nou Transport"></button>
+      <span>Nou Transport</span>
+      <span class="text-[#5c6578]">ricard.puig@noutransport.example</span>
+      <span class="text-[#5c6578]">Ricard Puig</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/elena" data-row data-client data-status="particular" data-search="elena vives riera elena.vives@correo.example particular" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3.5 text-sm">
+      <button type="button" data-check class="size-4 rounded-full border border-[#d5d8e0]" aria-label="Seleccionar Elena Vives Riera"></button>
+      <span>Elena Vives Riera</span>
+      <span class="text-[#5c6578]">elena.vives@correo.example</span>
+      <span class="text-[#5c6578]">Clienta directa</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/braseria" data-row data-client data-status="empresa" data-search="braseria del port joana vidal joana.vidal@braseriadelport.example hostelería" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3.5 text-sm">
+      <button type="button" data-check class="size-4 rounded-full border border-[#d5d8e0]" aria-label="Seleccionar Braseria del Port"></button>
+      <span>Braseria del Port</span>
+      <span class="text-[#5c6578]">joana.vidal@braseriadelport.example</span>
+      <span class="text-[#5c6578]">Joana Vidal</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/helvetia" data-row data-client data-status="empresa" data-search="helvetia seguros olga serra olga.serra@helvetia.example aseguradora" class="is-selected grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3.5 text-sm">
+      <button type="button" data-check aria-pressed="true" class="size-4 rounded-full border border-[#d5d8e0]" aria-label="Seleccionar Helvetia Seguros"></button>
+      <span>Helvetia Seguros</span>
+      <span class="text-[#5c6578]">olga.serra@helvetia.example</span>
+      <span class="text-[#5c6578]">Olga Serra</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <a href="#/cliente/llevant" data-row data-client data-status="empresa" data-search="clínica llevant andreu feliu andreu.feliu@clinicallevant.example sanidad" class="grid grid-cols-[2rem_minmax(0,1.3fr)_minmax(0,1.4fr)_minmax(0,1.1fr)_5.5rem] items-center gap-3 rounded-xl px-2 py-3.5 text-sm">
+      <button type="button" data-check class="size-4 rounded-full border border-[#d5d8e0]" aria-label="Seleccionar Clínica Llevant"></button>
+      <span>Clínica Llevant</span>
+      <span class="text-[#5c6578]">andreu.feliu@clinicallevant.example</span>
+      <span class="text-[#5c6578]">Andreu Feliu</span>
+      <span class="flex items-center justify-end gap-3"><span class="act act-open"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"></path></svg></span><span class="act act-edit"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"></path></svg></span><span class="act act-more"><svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></span></span>
+    </a>
+    <p id="result-empty" hidden class="px-2 py-8 text-sm text-mute">Ningún cliente coincide con ese filtro.</p>
+  </div>
+</section>
+<style>
+  #list-search svg,
+  label svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

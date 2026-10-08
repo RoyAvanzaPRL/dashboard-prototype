@@ -1,0 +1,264 @@
+<div id="home" class="relative flex h-full min-h-0">
+  <div class="flex min-w-0 flex-1 flex-col">
+    <header class="flex items-center px-7 pb-2 pt-5">
+      <h1 class="text-lg font-semibold">Inicio</h1>
+    </header>
+    <div class="min-h-0 flex-1 overflow-y-auto px-7 pb-6">
+      <p class="text-xl font-semibold tracking-tight text-tide">Bienvenida, Marina <span aria-hidden="true">👋</span> <span class="ml-1 text-base font-medium text-mute">Mié, 7 oct</span></p>
+      <div id="assistant" class="mt-3 flex items-center gap-2 rounded-xl bg-mint px-3 py-2.5"></div>
+
+      <section class="mt-4 rounded-2xl border border-line p-4">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="text-[15px] font-semibold">Volumen de señalamientos</h2>
+          <div class="relative">
+            <button type="button" data-menu="volume" class="grid size-7 place-items-center rounded-md text-mute hover:bg-[#f6f7f8]" aria-label="Opciones del volumen" aria-expanded="false">
+              <svg viewBox="0 0 24 24" class="size-4" fill="currentColor"><circle cx="6" cy="12" r="1.3"></circle><circle cx="12" cy="12" r="1.3"></circle><circle cx="18" cy="12" r="1.3"></circle></svg>
+            </button>
+            <div data-menu-panel="volume" hidden class="absolute right-0 top-8 z-10 w-44 rounded-xl border border-line bg-white p-1 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
+              <a href="#/agenda" class="block rounded-lg px-3 py-2 text-sm hover:bg-[#f6f7f8]">Ver la agenda</a>
+              <button type="button" data-jump="day" class="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-[#f6f7f8]">Ver un día</button>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <div class="seg" role="group" aria-label="Vista del volumen">
+            <button type="button" data-span="day" aria-pressed="false">Día</button>
+            <button type="button" data-span="week" aria-pressed="true">Semana</button>
+          </div>
+          <label class="relative">
+            <span class="sr-only">Semana</span>
+            <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-mute"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3.5v3M16 3.5v3M4 10h16"></path></svg>
+            <select id="week" class="appearance-none rounded-lg border border-line bg-white py-1.5 pl-8 pr-8 text-sm">
+              <option value="w1">5–11 oct 2026</option>
+              <option value="w2">12–18 oct 2026</option>
+              <option value="w3">19–25 oct 2026</option>
+            </select>
+            <svg viewBox="0 0 24 24" class="line pointer-events-none absolute right-2 top-1/2 size-3.5 -translate-y-1/2 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+          </label>
+        </div>
+        <div class="mt-4 grid grid-cols-[minmax(0,1fr)_148px] gap-5">
+          <div id="heat" class="min-w-0"></div>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-[#5c6570]">Horas cargadas</p>
+            <div id="busy"></div>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center justify-end gap-2 text-[11px] text-mute">
+          <span>Escala</span>
+          <span>0</span>
+          <span class="h-2 w-28 rounded-full" style="background: linear-gradient(90deg, #f3f6f6, #9fe6dc, #14b5a5, #0c857c)"></span>
+          <span>12</span>
+        </div>
+      </section>
+
+      <section class="mt-4 rounded-2xl border border-line p-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-[15px] font-semibold">Carga del equipo hoy</h2>
+          <div class="relative">
+            <button type="button" data-menu="load" class="grid size-7 place-items-center rounded-md text-mute hover:bg-[#f6f7f8]" aria-label="Opciones de la carga" aria-expanded="false">
+              <svg viewBox="0 0 24 24" class="size-4" fill="currentColor"><circle cx="6" cy="12" r="1.3"></circle><circle cx="12" cy="12" r="1.3"></circle><circle cx="18" cy="12" r="1.3"></circle></svg>
+            </button>
+            <div data-menu-panel="load" hidden class="absolute right-0 top-8 z-10 w-44 rounded-xl border border-line bg-white p-1 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
+              <a href="#/equipo" class="block rounded-lg px-3 py-2 text-sm hover:bg-[#f6f7f8]">Ver el equipo</a>
+            </div>
+          </div>
+        </div>
+        <ul class="mt-2">
+          <li class="flex items-center gap-3 border-t border-line py-3 first:border-t-0">
+            <span class="grid size-9 shrink-0 place-items-center rounded-full bg-[#d7e6f8] text-[11px] font-semibold text-[#24527a]">JP</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-medium">Jordi Palau</span>
+              <span class="block text-xs text-mute">Socio · Mercantil</span>
+              <span class="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#eceff3]"><span class="block h-full w-1/4 rounded-full bg-ink"></span></span>
+            </span>
+            <span class="text-sm tabular-nums">1/4</span>
+          </li>
+          <li class="flex items-center gap-3 border-t border-line py-3">
+            <span class="grid size-9 shrink-0 place-items-center rounded-full bg-[#ffe0cc] text-[11px] font-semibold text-[#8a4b2a]">MS</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-medium">Marina Soler</span>
+              <span class="block text-xs text-mute">Socia · Litigación</span>
+              <span class="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#fde8e8]"><span class="block h-full w-full rounded-full bg-hot"></span></span>
+            </span>
+            <span class="text-sm font-medium text-hot">Sobrecarga · 2/2</span>
+          </li>
+          <li class="flex items-center gap-3 border-t border-line py-3">
+            <span class="grid size-9 shrink-0 place-items-center rounded-full bg-[#d9f3e4] text-[11px] font-semibold text-[#1f6b45]">CN</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-medium">Clara Nieto</span>
+              <span class="block text-xs text-mute">Asociada senior</span>
+              <span class="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#eceff3]"><span class="block h-full w-1/2 rounded-full bg-ink"></span></span>
+            </span>
+            <span class="text-sm tabular-nums">2/4</span>
+          </li>
+          <li class="flex items-center gap-3 border-t border-line py-3">
+            <span class="grid size-9 shrink-0 place-items-center rounded-full bg-[#e6defa] text-[11px] font-semibold text-[#5b3d8a]">AB</span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-sm font-medium">Adrià Bosch</span>
+              <span class="block text-xs text-mute">Asociado · vuelve a las 16</span>
+              <span class="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-[#eceff3]"><span class="block h-full w-1/4 rounded-full bg-ink"></span></span>
+            </span>
+            <span class="text-sm tabular-nums">1/4</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mt-4 rounded-2xl border border-line p-4">
+        <h2 class="text-[15px] font-semibold">Objetivo de la semana</h2>
+        <p class="mt-1 text-sm text-mute">Tres plazos antes del viernes. Márcalos cuando queden hechos.</p>
+        <ul class="mt-3">
+          <li class="flex items-center gap-3 border-t border-line py-3">
+            <button type="button" data-target class="size-4 shrink-0 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar estrategia de Mora"></button>
+            <span class="min-w-0 flex-1 text-sm">Estrategia de Mora &amp; Hijos, con Jordi</span>
+            <span class="text-xs text-mute">Hoy · 10:00</span>
+          </li>
+          <li class="flex items-center gap-3 border-t border-line py-3">
+            <button type="button" data-target class="size-4 shrink-0 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar contestación de Nou Transport"></button>
+            <span class="min-w-0 flex-1 text-sm">Contestación de Nou Transport</span>
+            <span class="text-xs text-hot">Mañana · 13:00</span>
+          </li>
+          <li class="flex items-center gap-3 border-t border-line py-3">
+            <button type="button" data-target class="size-4 shrink-0 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar peritaje de Helvetia"></button>
+            <span class="min-w-0 flex-1 text-sm">Revisión del peritaje de Helvetia</span>
+            <span class="text-xs text-mute">Viernes · 9:30</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mt-4 rounded-2xl border border-line p-4">
+        <h2 class="text-[15px] font-semibold">En el estudio</h2>
+        <ol class="mt-1 text-sm">
+          <li class="border-t border-line py-3">
+            <p>Clara subió la tasación de Sant Gervasi.</p>
+            <p class="text-xs text-mute">Ayer · Familia Riera</p>
+          </li>
+          <li class="border-t border-line py-3">
+            <p>Entró el informe pericial de la cooperativa.</p>
+            <p class="text-xs text-mute">Lunes · Helvetia</p>
+          </li>
+          <li class="border-t border-line py-3">
+            <p>Adrià pidió el plano de 2019 al ayuntamiento.</p>
+            <p class="text-xs text-mute">Lunes · Braseria del Port</p>
+          </li>
+          <li class="border-t border-line py-3">
+            <p>Laia dejó preparada la provisión de octubre.</p>
+            <p class="text-xs text-mute">Viernes · Administración</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </div>
+
+  <button id="panel-toggle" type="button" class="absolute right-[300px] top-[22px] z-20 grid size-8 translate-x-1/2 place-items-center rounded-full border border-line bg-white text-mute shadow-sm hover:text-ink" aria-expanded="true" aria-controls="peak-panel" aria-label="Ocultar el plazo">
+    <svg viewBox="0 0 24 24" class="line size-4 transition-transform"><path d="m9 6 6 6-6 6"></path></svg>
+  </button>
+
+  <div id="peek" class="w-[244px] shrink-0 overflow-y-auto border-l border-line">
+    <div class="flex flex-col gap-3 px-4 pb-6 pt-16">
+      <a href="#/expedientes" class="rounded-2xl border border-line p-4 hover:border-[#d5d8e0]">
+        <p class="text-sm font-medium">En tu mesa</p>
+        <p class="mt-3 text-[28px] font-semibold leading-none">2</p>
+        <p class="mt-2 text-xs text-mute">expedientes a tu cargo</p>
+      </a>
+      <a href="#/agenda" class="rounded-2xl border border-line p-4 hover:border-[#d5d8e0]">
+        <p class="text-sm font-medium">Esta semana</p>
+        <p class="mt-3 text-[28px] font-semibold leading-none">3</p>
+        <p class="mt-2 text-xs text-mute">plazos antes del viernes</p>
+      </a>
+      <a href="#/expediente/EXP-2026-019" class="rounded-2xl border border-[#f7d4d4] bg-[#fff6f6] p-4">
+        <p class="text-sm font-medium text-hot">Urgente</p>
+        <p class="mt-3 text-[28px] font-semibold leading-none text-hot">1</p>
+        <p class="mt-2 text-xs text-mute">contestación sin presentar</p>
+      </a>
+      <a href="#/expedientes?estado=abierto" class="rounded-2xl border border-line p-4 hover:border-[#d5d8e0]">
+        <p class="text-sm font-medium">Estudio</p>
+        <p class="mt-3 text-[28px] font-semibold leading-none">5</p>
+        <p class="mt-2 text-xs text-mute">abiertos entre el equipo</p>
+      </a>
+    </div>
+  </div>
+
+  <aside id="peak-panel" class="flex w-[300px] shrink-0 flex-col border-l border-line">
+    <div class="min-h-0 flex-1 overflow-y-auto px-5 pb-4 pt-5">
+      <h2 id="peak-title" class="text-lg font-semibold">Revisar el jueves</h2>
+      <p id="peak-lede" class="mt-1 text-sm leading-relaxed text-mute"></p>
+      <div id="peak-bars" class="mt-4 flex h-32 items-stretch gap-1.5 border-b border-line"></div>
+      <div class="mt-4 rounded-xl bg-[#f3f6f8] px-3 py-3">
+        <p class="flex items-center gap-1.5 text-xs font-semibold text-tide">
+          <svg viewBox="0 0 24 24" class="line size-3.5"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"></path></svg>
+          Análisis
+        </p>
+        <p id="peak-predict-title" class="mt-1 text-sm font-semibold"></p>
+        <div id="peak-predicts"></div>
+      </div>
+      <div class="mt-5 flex items-center justify-between">
+        <h3 id="peak-block-title" class="text-sm font-semibold"></h3>
+        <a id="peak-block-link" href="#/agenda" class="text-sm font-medium text-tide">Ver todos</a>
+      </div>
+      <div id="peak-metrics" class="mt-1"></div>
+      <div class="mt-4 flex items-center justify-between">
+        <h3 class="text-sm font-semibold">Equipo disponible</h3>
+        <a href="#/equipo" class="text-sm font-medium text-tide">Ver todos</a>
+      </div>
+      <ul class="mt-1">
+        <li class="flex items-center gap-3 border-t border-line py-2.5">
+          <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#d7e6f8] text-[10px] font-semibold text-[#24527a]">JP</span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-medium">Jordi Palau</span>
+            <span class="block text-xs text-mute">Mercantil · Mora &amp; Hijos</span>
+          </span>
+          <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar a Jordi Palau"></button>
+        </li>
+        <li class="flex items-center gap-3 border-t border-line py-2.5">
+          <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#d9f3e4] text-[10px] font-semibold text-[#1f6b45]">CN</span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-medium">Clara Nieto</span>
+            <span class="block text-xs text-mute">Familia · inventario Riera</span>
+          </span>
+          <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar a Clara Nieto"></button>
+        </li>
+        <li class="flex items-center gap-3 border-t border-line py-2.5">
+          <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#e6defa] text-[10px] font-semibold text-[#5b3d8a]">AB</span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-medium">Adrià Bosch</span>
+            <span class="block text-xs text-mute">Contencioso · vuelve a las 16</span>
+          </span>
+          <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar a Adrià Bosch"></button>
+        </li>
+        <li class="flex items-center gap-3 border-t border-line py-2.5">
+          <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#fde2ea] text-[10px] font-semibold text-[#8a3d55]">LF</span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-medium">Laia Ferrer</span>
+            <span class="block text-xs text-mute">Gestión · provisión de octubre</span>
+          </span>
+          <button type="button" data-check class="size-4 rounded-[4px] border border-[#d5d8e0]" aria-pressed="false" aria-label="Marcar a Laia Ferrer"></button>
+        </li>
+      </ul>
+    </div>
+    <div class="flex items-center justify-end gap-2 border-t border-line px-4 py-3">
+      <button id="peak-later" type="button" class="shrink-0 px-1 text-[13px] font-medium text-[#3c424a]">Lo veo luego</button>
+      <a id="peak-action" href="#/expediente/EXP-2026-019" class="shrink-0 whitespace-nowrap rounded-lg bg-tide px-3 py-2 text-[13px] font-semibold text-white">Preparar contestación</a>
+    </div>
+  </aside>
+</div>
+<style>
+  #peek {
+    display: none;
+  }
+  #home.is-panel-closed #peak-panel {
+    display: none;
+  }
+  #home.is-panel-closed #peek {
+    display: block;
+  }
+  #home.is-panel-closed #panel-toggle {
+    right: 244px;
+  }
+  #home.is-panel-closed #panel-toggle svg {
+    transform: rotate(180deg);
+  }
+  #home .is-done span:nth-child(2) {
+    color: #8b919a;
+    text-decoration: line-through;
+  }
+</style>

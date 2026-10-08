@@ -1,0 +1,66 @@
+<div class="h-full overflow-y-auto px-8 py-6">
+  <div class="flex items-end justify-between gap-4">
+    <div>
+      <p class="text-[11px] font-bold tracking-[0.14em] text-mute">CLIENTES</p>
+      <h1 id="heading" class="mt-1 text-2xl font-bold tracking-tight">Todos</h1>
+      <p id="lede" class="mt-1 text-sm text-mute">Seis clientes con asunto en la mesa.</p>
+    </div>
+    <form id="list-search" class="relative">
+      <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+      <label class="sr-only" for="q">Buscar cliente</label>
+      <input id="q" type="search" placeholder="Buscar cliente" class="w-64 rounded-xl border border-line bg-white py-2 pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-brand" />
+    </form>
+  </div>
+  <p id="result-count" data-noun="clientes" data-one="cliente" class="mt-4 text-xs font-semibold tracking-wide text-mute">6 clientes</p>
+  <div class="mt-2 overflow-hidden rounded-2xl border border-line bg-white">
+    <a href="#/cliente/mora" data-row data-tipo="empresa" data-search="mora hijos nuria nuria.mora@morahijos.example distribución socia empresa" class="flex items-center gap-4 px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#3b6fd8] text-xs font-bold text-white">M</span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-medium">Mora &amp; Hijos</span>
+        <span class="block truncate text-xs text-mute">Núria Mora · nuria.mora@morahijos.example</span>
+      </span>
+      <span class="text-xs text-mute">Empresa</span>
+    </a>
+    <a href="#/cliente/nou" data-row data-tipo="empresa" data-search="nou transport ricard.puig@noutransport.example ricard puig logística empresa" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#e07a2f] text-xs font-bold text-white">N</span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-medium">Nou Transport</span>
+        <span class="block truncate text-xs text-mute">Ricard Puig · ricard.puig@noutransport.example</span>
+      </span>
+      <span class="text-xs text-mute">Empresa</span>
+    </a>
+    <a href="#/cliente/elena" data-row data-tipo="particular" data-search="elena vives riera elena.vives@correo.example particular" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#7c5cfc] text-xs font-bold text-white">E</span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-medium">Elena Vives Riera</span>
+        <span class="block truncate text-xs text-mute">Clienta · elena.vives@correo.example</span>
+      </span>
+      <span class="text-xs text-mute">Particular</span>
+    </a>
+    <a href="#/cliente/braseria" data-row data-tipo="empresa" data-search="braseria del port joana vidal joana.vidal@braseriadelport.example hostelería sitges empresa" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#178a4c] text-xs font-bold text-white">B</span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-medium">Braseria del Port</span>
+        <span class="block truncate text-xs text-mute">Joana Vidal · joana.vidal@braseriadelport.example</span>
+      </span>
+      <span class="text-xs text-mute">Empresa</span>
+    </a>
+    <a href="#/cliente/helvetia" data-row data-tipo="aseguradora" data-search="helvetia seguros olga serra olga.serra@helvetia.example aseguradora" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#0f9f8f] text-xs font-bold text-white">H</span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-medium">Helvetia Seguros</span>
+        <span class="block truncate text-xs text-mute">Olga Serra · olga.serra@helvetia.example</span>
+      </span>
+      <span class="text-xs text-mute">Aseguradora</span>
+    </a>
+    <a href="#/cliente/llevant" data-row data-tipo="empresa" data-search="clínica llevant andreu feliu andreu.feliu@clinicallevant.example sanidad empresa" class="flex items-center gap-4 border-t border-line px-4 py-3.5 text-sm hover:bg-[#fafafa]">
+      <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-[#d4537e] text-xs font-bold text-white">L</span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-medium">Clínica Llevant</span>
+        <span class="block truncate text-xs text-mute">Andreu Feliu · andreu.feliu@clinicallevant.example</span>
+      </span>
+      <span class="text-xs text-mute">Empresa</span>
+    </a>
+    <p id="result-empty" hidden class="px-4 py-10 text-sm text-mute">Ningún cliente coincide con ese submódulo.</p>
+  </div>
+</div>

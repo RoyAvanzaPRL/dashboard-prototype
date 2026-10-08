@@ -1,0 +1,59 @@
+<section id="matter" class="rounded-[28px] bg-white px-7 py-6 shadow-[0_10px_30px_rgba(30,36,51,0.04)]">
+  <a href="#/expedientes" class="text-sm font-medium text-violet">← Expedientes</a>
+  <div class="mt-4 flex items-center gap-3 text-sm">
+    <p data-bind="id" class="text-mute"></p>
+    <p data-bind="status"></p>
+    <p data-bind="area" class="text-mute"></p>
+  </div>
+  <h2 data-bind="title" class="mt-1 text-2xl font-semibold tracking-tight"></h2>
+  <p data-bind="summary" class="mt-2 max-w-3xl text-sm leading-relaxed text-[#5c6578]"></p>
+
+  <dl class="mt-6 grid grid-cols-3 gap-3">
+    <div class="rounded-2xl bg-canvas px-4 py-3">
+      <dt class="text-[11px] font-semibold tracking-[0.12em] text-mute">CLIENTE</dt>
+      <dd class="mt-1 text-sm"><a data-bind="clientLink" class="font-medium text-violet"></a></dd>
+    </div>
+    <div class="rounded-2xl bg-canvas px-4 py-3">
+      <dt class="text-[11px] font-semibold tracking-[0.12em] text-mute">CONTRARIO</dt>
+      <dd data-bind="opponent" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="rounded-2xl bg-canvas px-4 py-3">
+      <dt class="text-[11px] font-semibold tracking-[0.12em] text-mute">ÓRGANO</dt>
+      <dd data-bind="court" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="rounded-2xl bg-canvas px-4 py-3">
+      <dt class="text-[11px] font-semibold tracking-[0.12em] text-mute">RESPONSABLE</dt>
+      <dd data-bind="lead" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="rounded-2xl bg-canvas px-4 py-3">
+      <dt class="text-[11px] font-semibold tracking-[0.12em] text-mute">CUANTÍA</dt>
+      <dd data-bind="amount" class="mt-1 text-sm"></dd>
+    </div>
+    <div class="rounded-2xl bg-canvas px-4 py-3">
+      <dt class="text-[11px] font-semibold tracking-[0.12em] text-mute">ABIERTO</dt>
+      <dd data-bind="opened" class="mt-1 text-sm"></dd>
+    </div>
+  </dl>
+
+  <section class="mt-5 rounded-2xl bg-[#f4f1ff] px-4 py-4">
+    <p class="text-[11px] font-semibold tracking-[0.12em] text-violet">SIGUIENTE PASO</p>
+    <p data-bind="next" class="mt-1 text-lg font-semibold"></p>
+    <p data-bind="nextWhen" class="text-sm text-[#5c6578]"></p>
+  </section>
+
+  <div class="mt-6 grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)] gap-8">
+    <section>
+      <h3 class="text-[11px] font-semibold tracking-[0.14em] text-mute">CRONOLOGÍA</h3>
+      <ol id="timeline" class="mt-2"></ol>
+    </section>
+    <section>
+      <h3 class="text-[11px] font-semibold tracking-[0.14em] text-mute">DOCUMENTOS</h3>
+      <ul id="documents" class="mt-2"></ul>
+      <p class="mt-4 text-xs text-mute">Procurador · <span data-bind="procurador"></span></p>
+    </section>
+  </div>
+</section>
+<section id="matter-missing" hidden class="rounded-[28px] bg-white px-7 py-8">
+  <p class="text-lg font-semibold">Ese expediente no está en la mesa.</p>
+  <a class="mt-3 inline-block text-sm font-medium text-violet" href="#/expedientes">Volver al listado</a>
+</section>

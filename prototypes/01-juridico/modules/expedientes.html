@@ -1,0 +1,67 @@
+<div class="mx-auto max-w-6xl px-5 py-6 sm:px-8 sm:py-8">
+  <div class="flex flex-wrap items-end justify-between gap-3">
+    <div>
+      <h2 class="font-serif text-4xl tracking-tight">Expedientes</h2>
+      <p id="result-count" class="mt-1 text-sm text-stone-500">6 asuntos</p>
+    </div>
+    <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por estado">
+      <button type="button" data-filter="todos" class="rounded-full border border-line px-3 py-1 text-sm aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">Todos</button>
+      <button type="button" data-filter="abierto" class="rounded-full border border-line px-3 py-1 text-sm aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">Abiertos</button>
+      <button type="button" data-filter="urgente" class="rounded-full border border-line px-3 py-1 text-sm aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">Urgentes</button>
+      <button type="button" data-filter="cerrado" class="rounded-full border border-line px-3 py-1 text-sm aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper">Cerrados</button>
+    </div>
+  </div>
+
+  <div class="mt-6 overflow-hidden rounded-xl border border-line bg-panel">
+    <div class="hidden grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] gap-4 px-4 py-2 text-[11px] uppercase tracking-[0.14em] text-stone-500 md:grid">
+      <span>Ref.</span>
+      <span>Asunto</span>
+      <span>Cliente</span>
+      <span>Responsable</span>
+      <span>Estado</span>
+    </div>
+    <a href="#/expediente/EXP-2026-019" data-matter data-status="urgente" data-search="exp-2026-019 impugnación despido colectivo nou transport laboral marina soler" class="grid gap-1 border-t border-line px-4 py-3 hover:bg-paper md:grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] md:items-center md:gap-4">
+      <span class="font-mono text-xs text-stone-500">EXP-2026-019</span>
+      <span class="text-sm">Impugnación de despido colectivo</span>
+      <span class="text-sm text-stone-600">Nou Transport</span>
+      <span class="text-sm text-stone-600">Marina Soler</span>
+      <span class="inline-flex items-center gap-2 text-sm"><span class="size-1.5 rounded-full bg-wine"></span>Urgente</span>
+    </a>
+    <a href="#/expediente/EXP-2026-003" data-matter data-status="abierto" data-search="exp-2026-003 responsabilidad civil arquitecto helvetia seguros civil marina soler" class="grid gap-1 border-t border-line px-4 py-3 hover:bg-paper md:grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] md:items-center md:gap-4">
+      <span class="font-mono text-xs text-stone-500">EXP-2026-003</span>
+      <span class="text-sm">Responsabilidad civil del arquitecto</span>
+      <span class="text-sm text-stone-600">Helvetia Seguros</span>
+      <span class="text-sm text-stone-600">Marina Soler</span>
+      <span class="inline-flex items-center gap-2 text-sm"><span class="size-1.5 rounded-full bg-moss"></span>Abierto</span>
+    </a>
+    <a href="#/expediente/EXP-2026-014" data-matter data-status="abierto" data-search="exp-2026-014 impugnación junta mora hijos mercantil jordi palau" class="grid gap-1 border-t border-line px-4 py-3 hover:bg-paper md:grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] md:items-center md:gap-4">
+      <span class="font-mono text-xs text-stone-500">EXP-2026-014</span>
+      <span class="text-sm">Impugnación de acuerdos de la junta</span>
+      <span class="text-sm text-stone-600">Mora &amp; Hijos</span>
+      <span class="text-sm text-stone-600">Jordi Palau</span>
+      <span class="inline-flex items-center gap-2 text-sm"><span class="size-1.5 rounded-full bg-moss"></span>Abierto</span>
+    </a>
+    <a href="#/expediente/EXP-2025-088" data-matter data-status="abierto" data-search="exp-2025-088 liquidación gananciales familia riera elena vives familia clara nieto" class="grid gap-1 border-t border-line px-4 py-3 hover:bg-paper md:grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] md:items-center md:gap-4">
+      <span class="font-mono text-xs text-stone-500">EXP-2025-088</span>
+      <span class="text-sm">Liquidación de gananciales</span>
+      <span class="text-sm text-stone-600">Elena Vives Riera</span>
+      <span class="text-sm text-stone-600">Clara Nieto</span>
+      <span class="inline-flex items-center gap-2 text-sm"><span class="size-1.5 rounded-full bg-moss"></span>Abierto</span>
+    </a>
+    <a href="#/expediente/EXP-2026-011" data-matter data-status="abierto" data-search="exp-2026-011 licencia terraza braseria del port sitges contencioso adrià bosch adria" class="grid gap-1 border-t border-line px-4 py-3 hover:bg-paper md:grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] md:items-center md:gap-4">
+      <span class="font-mono text-xs text-stone-500">EXP-2026-011</span>
+      <span class="text-sm">Licencia de terraza denegada</span>
+      <span class="text-sm text-stone-600">Braseria del Port</span>
+      <span class="text-sm text-stone-600">Adrià Bosch</span>
+      <span class="inline-flex items-center gap-2 text-sm"><span class="size-1.5 rounded-full bg-moss"></span>Abierto</span>
+    </a>
+    <a href="#/expediente/EXP-2025-072" data-matter data-status="cerrado" data-search="exp-2025-072 honorarios impagados clínica llevant clinica civil clara nieto" class="grid gap-1 border-t border-line px-4 py-3 hover:bg-paper md:grid-cols-[7.5rem_minmax(0,1.5fr)_minmax(0,1fr)_8.5rem_6.5rem] md:items-center md:gap-4">
+      <span class="font-mono text-xs text-stone-500">EXP-2025-072</span>
+      <span class="text-sm">Honorarios impagados</span>
+      <span class="text-sm text-stone-600">Clínica Llevant</span>
+      <span class="text-sm text-stone-600">Clara Nieto</span>
+      <span class="inline-flex items-center gap-2 text-sm"><span class="size-1.5 rounded-full bg-stone-400"></span>Cerrado</span>
+    </a>
+    <p id="result-empty" hidden class="border-t border-line px-4 py-8 text-sm text-stone-500">Ningún expediente coincide con ese filtro.</p>
+  </div>
+</div>
